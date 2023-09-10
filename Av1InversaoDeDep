@@ -17,8 +17,12 @@ public class Contador{
 }
 
 public class Alarme{
-    public fun Vibrar(){}
+    public fun Vibrar(){
+        Console.WriteLine($" Vibrando!!!");
+    }
 
-    public fun AcionarSom(){}
+    public fun AcionarSom(){
+        Console.WriteLine($" trim-trim-trim...");
+    }
 
 }
