@@ -1,5 +1,20 @@
 using system;
 
+public class Program{
+    public static void Main(string[] args) {
+        int count = 0;
+        public Contador c = new Contador();
+        while(true) {
+            Count++;
+            c.VerificaHoras(Count);
+            if(c.VerificaHoras(Count) == 0){
+                return false;
+            }
+        }
+
+    }
+}
+
 public class Contador{
     int horas;
 
@@ -14,7 +29,7 @@ public class Contador{
             return(Alarme.AcionarSom, Alarme.Vibrar);
         }
         else{
-            return(Console.WriteLine($"Contando..."));
+            return 0;
         }
     }
 }
