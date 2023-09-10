@@ -2,21 +2,32 @@ using system;
 
 public class Contador{
     int horas;
+    public AlarmeInterface _al; 
 
-    public Contador contador(int horas){
-        this.horas = horas;
+    public Contador contador(int hora){
+        this.horas = hora;
     }
-
-    public Al = Alarme;
 
     fun VerificaHoras(){
         if(horas == 17){
-            return(Alarme.AcionarSom, Alarme.Vibrar);
+            return(_al.AcionarSom, _al.Vibrar);
         }
     }
+
 }
 
-public class Alarme{
+public class Alarme: AlarmeInterface{
+    override fun Vibrar(){
+        Console.WriteLine($" Vibrando!!!");
+    }
+
+    override fun AcionarSom(){
+        Console.WriteLine($" trim-trim-trim...");
+    }
+
+}
+
+public interface AlarmeInterface{
     public fun Vibrar(){}
 
     public fun AcionarSom(){}
