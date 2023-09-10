@@ -1,0 +1,24 @@
+using system;
+
+public class Contador{
+    int horas;
+
+    public Contador contador(int horas){
+        this.horas = horas;
+    }
+
+    public Al = Alarme;
+
+    fun VerificaHoras(){
+        if(horas == 17){
+            return(Alarme.AcionarSom, Alarme.Vibrar);
+        }
+    }
+}
+
+public class Alarme{
+    public fun Vibrar(){}
+
+    public fun AcionarSom(){}
+
+}
