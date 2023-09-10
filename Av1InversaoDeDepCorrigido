@@ -2,7 +2,8 @@ using system;
 
 public class Contador{
     int horas;
-    public AlarmeInterface _al; 
+    public AlarmeInterface _al; /* Para que possa ser feita a correção devemos criar um atributo
+        do tipo da interface.*/
 
     public Contador contador(int hora){
         this.horas = hora;
@@ -10,26 +11,32 @@ public class Contador{
 
     fun VerificaHoras(){
         if(horas == 17){
-            return(_al.AcionarSom, _al.Vibrar);
+
+            return(_al.AcionarSom, _al.Vibrar); /* Vamos aplica-la no lugar da classe que herda
+                dessa interface com suas funções.*/
+        }
+        else{
+            return(Console.WriteLine($"Contando..."));
         }
     }
 
 }
 
-public class Alarme: AlarmeInterface{
-    override fun Vibrar(){
+public interface AlarmeInterface{/*vamos criar uma interface para que "Contador" não possua 
+    dependencia de "Alarme"*/
+    public fun Vibrar(){}
+    
+    public fun AcionarSom(){}
+
+}
+
+public class Alarme: AlarmeInterface{/*vamos fazer com que "Alarme" herde da Interface criada.*/
+    override fun Vibrar(){/*E daremos Override nas Funções.*/
         Console.WriteLine($" Vibrando!!!");
     }
 
     override fun AcionarSom(){
         Console.WriteLine($" trim-trim-trim...");
     }
-
-}
-
-public interface AlarmeInterface{
-    public fun Vibrar(){}
-
-    public fun AcionarSom(){}
 
 }
