@@ -13,6 +13,9 @@ public class Contador{
         if(horas == 17){
             return(Alarme.AcionarSom, Alarme.Vibrar);
         }
+        else{
+            return(Console.WriteLine($"Contando..."));
+        }
     }
 }
 
