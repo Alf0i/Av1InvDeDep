@@ -1,57 +1,61 @@
-using system;
+using System;
 
-public class Program{
-    public static void Main(string[] args) {
+public class Program
+{
+    public static void Main(string[] args)
+    {
         int count = 0;
-        public Contador c = new Contador();
-        while(true) {
-            Count++;
-            c.VerificaHoras(Count);
-            if(c.VerificaHoras(Count) == 0){
-                return false;
-            }
-        }
+        Contador c = new Contador();
 
+        while (true)
+        {
+            count++;
+            c.VerificaHoras(count);
+        }
     }
 }
 
-public class Contador{
+public class Contador
+{
     int horas;
-    public AlarmeInterface _al; /* Para que possa ser feita a correção devemos criar um atributo
+    public IAlarmeInterface _al; /* Para que possa ser feita a correção devemos criar um atributo
         do tipo da interface.*/
 
-    public Contador contador(int hora){
-        this.horas = hora;
+    public Contador()
+    {
+        this.horas = 0; // Initialize horas
+        _al = new Alarme(); // Initialize _al
     }
 
-    fun VerificaHoras(){
-        if(horas == 17){
+    public void VerificaHoras(int horas)
+    {
+        this.horas = horas;
 
-            return(_al.AcionarSom, _al.Vibrar); /* Vamos aplica-la no lugar da classe que herda
-                dessa interface com suas funções.*/
-        }
-        else{
-            return 0;
+        if (horas == 17)
+        {
+            _al.AcionarSom();
+            _al.Vibrar();
         }
     }
-
 }
 
-public interface AlarmeInterface{/*vamos criar uma interface para que "Contador" não possua 
+public interface IAlarmeInterface /*vamos criar uma interface para que "Contador" não possua 
     dependencia de "Alarme"*/
-    public fun Vibrar(){}
-    
-    public fun AcionarSom(){}
+{
+    void Vibrar();
 
+    void AcionarSom();
 }
 
-public class Alarme: AlarmeInterface{/*vamos fazer com que "Alarme" herde da Interface criada.*/
-    override fun Vibrar(){/*E daremos Override nas Funções.*/
-        Console.WriteLine($" Vibrando!!!");
+public class Alarme : IAlarmeInterface /*vamos fazer com que "Alarme" herde da Interface criada.*/
+{
+    public void Vibrar()
+    {
+        Console.WriteLine("Vibrando!!!");
     }
 
-    override fun AcionarSom(){
-        Console.WriteLine($" trim-trim-trim...");
+    public void AcionarSom()
+    {
+        Console.WriteLine("trim-trim-trim...");
     }
-
 }
