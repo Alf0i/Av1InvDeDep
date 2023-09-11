@@ -34,7 +34,7 @@ public class Contador
         _al = new Alarme(); // Initialize _al
     }
 
-    public void VerificaHoras(int horas)
+    public int VerificaHoras(int horas)
     {
         this.horas = horas;
 
