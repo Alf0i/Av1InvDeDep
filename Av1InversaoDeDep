@@ -1,19 +1,27 @@
 using system;
 
-public class Program{
-    public static void Main(string[] args) {
+public class Program
+{
+    public static void Main(string[] args)
+    {
         int count = 0;
-        public Contador c = new Contador();
-        while(true) {
-            Count++;
-            c.VerificaHoras(Count);
-            if(c.VerificaHoras(Count) == 0){
-                return false;
-            }
-        }
+        int i = 0;
+        Contador c = new Contador();
 
-    }
+        while (i == 0)
+        {
+
+            Console.WriteLine(count);
+
+            count++;
+            
+            i = c.VerificaHoras(count);
+            
+        } 
+
+    } 
 }
+
 
 public class Contador{
     int horas;
@@ -24,9 +32,11 @@ public class Contador{
 
     public Al = Alarme;
 
-    fun VerificaHoras(){
+    public int VerificaHoras(){
         if(horas == 17){
-            return(Alarme.AcionarSom, Alarme.Vibrar);
+            Alarme.AcionarSom();
+            Alarme.Vibrar();
+            return 1;
         }
         else{
             return 0;
