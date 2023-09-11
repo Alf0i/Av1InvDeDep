@@ -4,9 +4,10 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        Alarme Alm = new Alarme();
         int count = 0;
         int i = 0;
-        Contador c = new Contador();
+        Contador c = new Contador(Alm);
 
         while (i == 0)
         {
@@ -28,10 +29,10 @@ public class Contador
     public IAlarmeInterface _al; /* Para que possa ser feita a correção devemos criar um atributo
         do tipo da interface.*/
 
-    public Contador()
+    public Contador(Alarme alm)
     {
         this.horas = 0; // Initialize horas
-        _al = new Alarme(); // Initialize _al
+        this._al = alm; // Initialize _al
     }
 
     public int VerificaHoras(int horas)
