@@ -5,14 +5,21 @@ public class Program
     public static void Main(string[] args)
     {
         int count = 0;
+        int i = 0;
         Contador c = new Contador();
 
-        while (true)
+        while (i == 0)
         {
+
+            Console.WriteLine(count);
+
             count++;
-            c.VerificaHoras(count);
-        }
-    }
+            
+            i = c.VerificaHoras(count);
+            
+        } 
+
+    } 
 }
 
 public class Contador
@@ -35,7 +42,8 @@ public class Contador
         {
             _al.AcionarSom();
             _al.Vibrar();
-        }
+            return 1;
+        }  return 0;
     }
 }
 
