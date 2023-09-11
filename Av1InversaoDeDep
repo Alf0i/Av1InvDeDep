@@ -1,4 +1,4 @@
-using system;
+using System;
 
 public class Program
 {
@@ -26,16 +26,15 @@ public class Program
 public class Contador{
     int horas;
 
-    public Contador contador(int horas){
-        this.horas = horas;
+    public Contador (){
     }
 
-    public Al = Alarme;
+    public Alarme Al = new Alarme();
 
-    public int VerificaHoras(){
+    public int VerificaHoras(int horas){
         if(horas == 17){
-            Alarme.AcionarSom();
-            Alarme.Vibrar();
+            Al.AcionarSom();
+            Al.Vibrar();
             return 1;
         }
         else{
@@ -45,11 +44,11 @@ public class Contador{
 }
 
 public class Alarme{
-    public fun Vibrar(){
+    public void Vibrar(){
         Console.WriteLine($" Vibrando!!!");
     }
 
-    public fun AcionarSom(){
+    public void AcionarSom(){
         Console.WriteLine($" trim-trim-trim...");
     }
 
